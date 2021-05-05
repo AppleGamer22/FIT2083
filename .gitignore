@@ -1,0 +1,44 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+# compiled output
+
+/dist
+/tmp
+/out-tsc
+venv
+.venv
+.vagrant
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.idea/discord.xml
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+**/id_rsa
+*.log
+# System Files
+.DS_Store
+Thumbs.db
+# LaTeX
+main.aux
+main.fdb_latexmk
+main.fls
+main.log
+main.pdf
+main.out
+main.synctex.gz
