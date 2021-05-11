@@ -1,3 +1,14 @@
 {
-	"python.pythonPath": ".venv/bin/python"
+	"python.pythonPath": "/Users/AppleGamer22/.local/share/virtualenvs/FIT2083-Jcyv27Yh/bin/python",
+	"python.testing.unittestArgs": [
+		"-v",
+		"-s",
+		".",
+		"-p",
+		"test_*.py"
+	],
+	"python.testing.pytestEnabled": false,
+	"python.testing.nosetestsEnabled": false,
+	"python.testing.unittestEnabled": true,
+	"jupyter.jupyterServerType": "remote"
 }

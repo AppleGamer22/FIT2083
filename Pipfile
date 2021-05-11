@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pydocstyle = "*"
+
+[packages]
+jupyter = "==1.0.0"
+ipykernel  = "==5.5.4"
+matplotlib = "==3.4.2"
+pandas = "==1.2.4"
+
+[requires]
+python_version = "3.9"
