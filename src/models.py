@@ -19,9 +19,9 @@ class Group:
 			bug.tick(len(self.bug_deleted) - 1)
 		for developer in self.developers:
 			developer.tick()
-			for _ in range(100):
-				if uniform(0, 1) <= self.cve_count_mean / self.total_cve_count or len(self.bugs) < len(self.developers):
-					self.bugs.append(Bug(randrange(maxsize), len(self.developers), self.bugs, self.bug_deleted))
+		for _ in range(100):
+			if uniform(0, 1) <= self.cve_count_mean / self.total_cve_count:
+				self.bugs.append(Bug(randrange(maxsize), len(self.developers), self.bugs, self.bug_deleted))
 
 
 class OpenGroup(Group):
