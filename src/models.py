@@ -20,7 +20,6 @@ class Group:
 		for i in range(randrange(len(self.developers)), randrange(len(self.developers))):
 			developer =choice(self.developers)
 			developer.tick()
-		# for _ in range(randrange(len(self.developers))):
 		if uniform(0, 1) <= self.cve_count_mean / self.total_cve_count:
 			self.bugs.append(Bug(randrange(maxsize), len(self.developers), self.bugs, self.bug_deleted))
 
@@ -40,16 +39,14 @@ class ClosedGroup:
 	def __init__(self, developer_count: int):
 		self.group1 = Group(developer_count // 2, ClosedGroup.cve_count_mean, ClosedGroup.total_windows_cve_count)
 		self.group2 = Group(developer_count // 2, ClosedGroup.cve_count_mean, ClosedGroup.total_windows_cve_count)
+		self.bug_deleted = [0]
 
-if __name__ == "__main__":
-	open_group = OpenGroup(25)
-	closed_group = ClosedGroup(25)
-	for _ in range(10000):
-		open_group.tick()
-		closed_group.group1.tick()
-		closed_group.group2.tick()
-	print(sum(open_group.bug_deleted), len(open_group.bugs))
-	closed_group_summary = []
-	for i in range(len(closed_group.group1.bug_deleted)):
-		closed_group_summary.append(closed_group.group1.bug_deleted[i] + closed_group.group2.bug_deleted[i])
-	print(sum(closed_group_summary), len(closed_group.group1.bugs) + len(closed_group.group2.bugs))
+	def tick(self):
+		if uniform(0, 1) <= 0.5:
+			self.group1.tick()
+			self.group2.bug_deleted.append(0)
+		else:
+			self.group2.tick()
+			self.group1.bug_deleted.append(0)
+		self.bug_deleted.append(self.group1.bug_deleted[-1] + self.group2.bug_deleted[-1])
+
