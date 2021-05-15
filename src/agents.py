@@ -7,17 +7,18 @@ class Developer:
 	bug_del_rate_linux = 128.153271 / 4612
 	bug_del_rate_windows = 330.674714 / 8931
 
-	def __init__(self, uid: int, bug_pool: List[Bug]):
+	def __init__(self, uid: int, team_size: int, bug_pool: List[Bug]):
 		self.bug_uids: List[int] = []
 		self.uid = uid
 		self.bug_pool = bug_pool
+		self.team_size = team_size
 		self.edges_count = 0
 
 	def tick(self):
 		for _ in range(100):
-			is_in_open_group = uniform(0, 1) <= Developer.bug_del_rate_linux
-			is_in_closed_group = uniform(0, 1) <= Developer.bug_del_rate_windows
-			if len(self.bug_pool) > 0 and len(self.bug_uids) < 3 and (is_in_open_group or is_in_closed_group):
+			is_in_open_group = uniform(0, 1) <= Developer.bug_del_rate_linux / self.team_size
+			is_in_closed_group = uniform(0, 1) <= Developer.bug_del_rate_windows / self.team_size
+			if 0 < len(self.bug_pool) and len(self.bug_uids) < 3 and (is_in_open_group or is_in_closed_group):
 				bug: Bug = choice(self.bug_pool)
 				self.bug_uids.append(bug.uid)
 				bug.edges_count += 1
@@ -40,6 +41,6 @@ class Bug:
 		return self.uid == other_uid
 
 	def tick(self, step: int):
-		if self.edges_count >= 5:
+		if self.edges_count >= 4:
 			self.bug_pool.remove(self)
 			self.bug_deleted[step] += 1
