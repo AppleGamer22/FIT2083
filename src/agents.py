@@ -16,9 +16,9 @@ class Developer:
 
 	def tick(self):
 		for _ in range(100):
-			is_in_open_group = uniform(0, 1) <= Developer.bug_del_rate_linux / self.team_size
-			is_in_closed_group = uniform(0, 1) <= Developer.bug_del_rate_windows / self.team_size
-			if 0 < len(self.bug_pool) and len(self.bug_uids) < 3 and (is_in_open_group or is_in_closed_group):
+			is_in_open_group = uniform(0, 1) <= Developer.bug_del_rate_linux
+			is_in_closed_group = uniform(0, 1) <= Developer.bug_del_rate_windows
+			if len(self.bug_pool) > 0 and len(self.bug_uids) < 3 and (is_in_open_group or is_in_closed_group):
 				bug: Bug = choice(self.bug_pool)
 				self.bug_uids.append(bug.uid)
 				bug.edges_count += 1

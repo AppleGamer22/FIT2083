@@ -1,6 +1,6 @@
 from typing import List
 from sys import maxsize
-from random import uniform, randrange
+from random import choice, uniform, randrange
 from agents import Bug, Developer
 
 class Group:
@@ -17,7 +17,8 @@ class Group:
 		self.bug_deleted.append(0)
 		for bug in self.bugs:
 			bug.tick(len(self.bug_deleted) - 1)
-		for developer in self.developers:
+		for i in range(randrange(len(self.developers)), randrange(len(self.developers))):
+			developer =choice(self.developers)
 			developer.tick()
 		# for _ in range(randrange(len(self.developers))):
 		if uniform(0, 1) <= self.cve_count_mean / self.total_cve_count:
