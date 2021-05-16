@@ -32,6 +32,7 @@ testem.log
 **/id_rsa
 *.log
 **/__pycache__/**
+*.pdf_tex
 # System Files
 .DS_Store
 Thumbs.db
