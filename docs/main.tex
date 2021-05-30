@@ -16,14 +16,14 @@
 \section*{Author Contributions}
 OB proposed the research question, designed the study, wrangled the data, analysed the results, drafted and edited the paper.
 \section{Abstract}
-The aim of this project is to simulate both development approaches with agent-based simulations that introduces bug points based on a predefined probability and records the amount of bug points eliminated over time. The rate of bugs eliminated over time of each agent group will be determined by comparing the number of bugs acknowledged and solved by the Linux and Windows development teams. As the simulation unfolds, the total number of bugs fixed over time was recorded, which will be converted into a chart in order to provide a clearer insight into the bug-related implications of using each approach. The insights from this project might assist software developers, technology companies and computer scientists to decide more informatively for themselves which development model is better for their circumstance. Nowadays the comparison between open-source software and closed-source influences global infrastructure (Zemlin 2016), scientific research (Wilson \& Tchantchaleishvili 2013) and how software is maintained and distributed (Volpi 2019).
+The aim of this project is to simulate \textcolor{blue}{the open-source and closed-source} development approaches with agent-based simulations that introduces bug points based on a predefined probability and records the amount of bug points eliminated over time. The rate of bugs eliminated over time of each agent group \textcolor{blue}{was} determined by comparing the number of bugs acknowledged and solved by the Linux and Windows development teams. As the simulation unfolds, the total number of bugs fixed over time was recorded, which \textcolor{blue}{was} converted into a chart in order to provide a clearer insight into the bug-related implications of using each approach. The insights from this project might assist software developers, technology companies and computer scientists to decide more informatively for themselves which development model is better for their circumstance. Nowadays the comparison between open-source software and closed-source influences global infrastructure (Zemlin 2016), scientific research (Wilson \& Tchantchaleishvili 2013) and how software is maintained and distributed (Volpi 2019).
 \section{Keywords}
 Open-source, Closed-source, Software bugs, Simulation
 \section{Introduction}
-Many software-related professionals ask themselves: What software development and distribution model (open-source/closed-source) is better for software stability (based on bug fixes) over time? This study aims to attempt tucking this question by using an agent based simulation in order to model the team dynamics of open-source (O’Neill 2012) development, where the team members are free to collaborate with anyone they wish, and closed-source development, where team members cannot easily collaborate with outsiders. In this paper, the methods of the study (simulation logic, data collection and statistical analysis), the results of the simulation and relevant discussion are featured.
+Many software-related professionals ask themselves: \textcolor{blue}{Does the open-source software development model enable better software reliability (in terms of bug fixes over time) than the closed-source model}? This study aims to attempt \textcolor{blue}{tackling} this question by using an agent based simulation in order to model the team dynamics of open-source (O’Neill 2012) development, where the team members are free to collaborate with anyone they wish, and closed-source development, where team members cannot easily collaborate with outsiders. In this paper, the methods of the study (simulation logic, data collection and statistical analysis), the results of the simulation and relevant discussion are featured. \textcolor{blue}{The method of an agent-based simulation was selected because of its clear separation from the real world, which enables better statistical analysis (due to the direct control over the number of repetitions) without potentially affecting real-world software projects}. \textcolor{blue}{This projects aims to better inform IT and Computer Science professionals who are looking for a software development model that maximizes their software's reliability}.
 \section{Method}
 \subsection{Simulation Logic}
-In order to answer the research question mentioned above, I will construct an agent-based simulation with the following agents:
+In order to answer the research question mentioned above, an agent-based simulation \textcolor{green}{was constructed} with the following agents:
 \begin{itemize}
 	\item A software bug agent that:
 	\begin{itemize}
@@ -92,7 +92,12 @@ Due to the mostly consistent and the simulation's logic, the number of bug nodes
 The open-source side of the simulation attempted to mimic the way open-source software is being developed in the real world, which shutters the notion of software as patent by allowing anybody to audit and modify the source code (Fuggetta 2003)(O’Neill 2012). This manifested in the simulation by allowing developer nodes to access any bug node. The closed-source group was composed of two smaller open-source-like groups that can only access bugs generated in their group. It is suspected that current implementation of random bug node generation and elimination does not simulate closely enough the way closed-source software teams operate in the real world.
 \section{Conclusion}
 In conclusion, the basic logic and architecture for this study's simulation are established, but they are not comprehensive enough to mimic the real world. Future research into this field should use more comprehensive data that would allow the simulation to randomly generate and eliminate bug nodes in a more complex manner.
-\newpage\section{Bibliography}
+\newpage
+\section{Appendices}
+\begin{itemize}
+	\item Bornstein, Omri. 2021. “AppleGamer22/FIT2083.” GitHub. May 3, 2021. \url{https://github.com/AppleGamer22/FIT2083}.
+\end{itemize}
+\section{Bibliography}
 \begin{itemize}
 	\item Bonaccorsi, Andrea, and Cristina Rossi. 2003. "Why Open Source Software Can Succeed." Research Policy 32 (7): 1243–58. \url{https://doi.org/10.1016/s0048-7333(03)00051-9}.
 	\item Brigham, Katie, Lindsey Jacobson, and CNBC. 2019. "The Rise of Open-Source Software." YouTube Video. CNBC. \url{https://youtu.be/SpeDK1TPbew}.
@@ -110,4 +115,25 @@ In conclusion, the basic logic and architecture for this study's simulation are 
 	\item Volpi, Mike. 2019. "How Open-Source Software Took over the World." TechCrunch. TechCrunch. January 12, 2019. \url{https://techcrunch.com/2019/01/12/how-open-source-software-took-over-the-world/}.
 	\item Zemlin, Jim. 2016. "What the Tech Industry Has Learned from Linus Torvalds." YouTube Video. TEDx Talks. \url{https://youtu.be/7XTHdcmjenI}.
 \end{itemize}
+\newpage
+\section{Reviewer \#1 Response}
+\subsection{Abstract}
+\begin{enumerate}
+	\item Not bad, although the use of "both development approaches" should have been more explicit.
+	\begin{itemize}
+		\item Thanks for pointing this, I now understand this phrasing would not be very clear for the average reader.
+	\end{itemize}
+	\item Also, careful with the tenses used in your writing. Part of the abstract is written in past tense, and partly in future tense.
+	\begin{itemize}
+		\item The sentences with inconsistent past tenses were rewritten with past tense, due to the fact that they describe past actions.
+	\end{itemize}
+\end{enumerate}
+\subsection{Introduction}
+\begin{enumerate}
+	\item The introduction tends to be a bigger piece of writing than the abstract.There appears to be critical context information missing here.
+	\begin{itemize}
+		\item The need of identifying a software development model that maximizes software reliability is now clearly mentioned.
+		\item The beneficiaries of the study are now clearly mentioned.
+	\end{itemize}
+\end{enumerate}
 \end{document}
